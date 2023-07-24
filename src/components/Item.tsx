@@ -1,10 +1,11 @@
 import "./Item.css";
 import React from "react";
 
-function Item() {
+function Item(props: any) {
     return (
         <div className="Item">
-            <h1>Item components</h1>
+            <h1>{props.name}</h1>
+            <h2>Price: ${props.price}</h2>
         </div>
     )
 }
