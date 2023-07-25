@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './components/Item'
 
-function App() {
+const  App = () => {
   const itemList = [
     {
       name: "Coke",

@@ -1,12 +1,13 @@
 import "./Item.css";
+import Card from "./Card";
 import React from "react";
 
-function Item(props: any) {
+const Item = (props: any) => {
     return (
-        <div className="Item">
+        <Card className="Item">
             <h1>{props.name}</h1>
             <h2>Price: ${props.price}</h2>
-        </div>
+        </Card>
     )
 }
 
