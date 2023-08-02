@@ -8,7 +8,6 @@ const NewItem = (props: any) => {
             ...enteredItemData,
             id: Math.random().toString()
         }
-        console.log(itemData);
         props.onAddItem(itemData);
     }
 

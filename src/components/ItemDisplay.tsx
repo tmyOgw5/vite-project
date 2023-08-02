@@ -4,21 +4,25 @@ import Card from "./Card";
 
 
 const ItemDisplay = (props: any) => {
-    const [price, setPrice] = useState(props.price);
+    console.log(props)
+    //const [price, setPrice] = useState(props.price);
 
 
-    const clickHandler = () => {
-        setPrice(price + 1);
+    /*const clickHandler = () => {
+        setPrice((prevPrice : number) => {
+            return prevPrice + 1;
+        });
         console.log("Clicked!");
     }
+    console.log(price)*/
 
     return (
         <div>
             <Card className="Item">
                 <div>
                     <h1>{props.name}</h1>
-                    <h2>Price: ${price}</h2>
-                    <button onClick={clickHandler}>Change prices</button>
+                    <h2>Price: ${props.price}</h2>
+                    <button >Change prices</button>
                 </div>
             </Card>
         </div>

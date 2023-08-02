@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Item from './components/Item'
 import Header from './components/Header'
 import './App.css'
 import './components/ItemForm'
 import NewItem from './components/NewItem'
 
+const DUMMY_ITEMS = [
+  {
+    name: "Coke",
+    price: 1.99
+  },
+  {
+    name: "Sprite",
+    price: 1.99
+  },
+  {
+    name: "Fanta",
+    price: 1.99
+  }
+];
+
 const  App = () => {
-  const itemList = [
-    {
-      name: "Coke",
-      price: 1.99
-    },
-    {
-      name: "Sprite",
-      price: 1.99
-    },
-  ]
+  const [itemList, setItemList] = useState(DUMMY_ITEMS);
   const addItemHandler = (item: any) => {
+    setItemList((prevItemList) => {
+      return [item, ...prevItemList];
+    });
+
     console.log("In App.tsx");
     console.log(item);
   }
@@ -26,7 +36,6 @@ const  App = () => {
     <div className="App">
       <Header />
       <NewItem onAddItem={addItemHandler}/>
-      <h1>React TypeScript Template</h1>
       <Item items={itemList} />
       
     </div>
