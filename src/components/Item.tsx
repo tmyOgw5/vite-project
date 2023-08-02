@@ -6,11 +6,10 @@ import ItemDisplay from "./ItemDisplay";
 
 const Item = (props: any) => {
 
-
+    
     return (
         <Card className="items">
-            <ItemDisplay name={props.items[0].name} price={props.items[0].price}/>
-            <ItemDisplay name={props.items[1].name} price={props.items[1].price}/>
+            {props.items.map((item: any) => (<ItemDisplay key={item.index} name={item.name} price={item.price}/>))}
         </Card>
     );
 }
