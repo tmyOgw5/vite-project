@@ -1,22 +1,16 @@
 import React, {useState} from "react";
 import "./Item.css";
 import Card from "./Card";
+import ItemDisplay from "./ItemDisplay";
+
 
 const Item = (props: any) => {
 
-    const [price, setPrice] = useState(props.price);
-
-
-    const clickHandler = () => {
-        setPrice(price + 1);
-        console.log("Clicked!");
-    }
 
     return (
-        <Card className="Item">
-            <h1>{props.name}</h1>
-            <h2>Price: ${price}</h2>
-            <button onClick={clickHandler}>Change prices</button>
+        <Card className="items">
+            <ItemDisplay name={props.items[0].name} price={props.items[0].price}/>
+            <ItemDisplay name={props.items[1].name} price={props.items[1].price}/>
         </Card>
     );
 }
