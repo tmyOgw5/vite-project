@@ -1,45 +1,17 @@
-import React, { useState } from 'react'
-import Item from './components/Item'
-import Header from './components/Header'
-import './App.css'
-import './components/ItemForm'
-import NewItem from './components/NewItem'
+import React from 'react';
+import { useRoutes } from 'react-router-dom';
+import routes from './Routes';
+import Header from './components/Header';
 
-const DUMMY_ITEMS = [
-  {
-    name: "Coke",
-    price: 1.99
-  },
-  {
-    name: "Sprite",
-    price: 1.99
-  },
-  {
-    name: "Fanta",
-    price: 1.99
-  }
-];
-
-const  App = () => {
-  const [itemList, setItemList] = useState(DUMMY_ITEMS);
-  const addItemHandler = (item: any) => {
-    setItemList((prevItemList) => {
-      return [item, ...prevItemList];
-    });
-
-    console.log("In App.tsx");
-    console.log(item);
-  }
-
+const App = () => {
+  const routing = useRoutes(routes);
 
   return (
-    <div className="App">
+    <React.Fragment>
       <Header />
-      <NewItem onAddItem={addItemHandler}/>
-      <Item items={itemList} />
-      
-    </div>
-  )
-}
+      {routing}
+    </React.Fragment>
+  );
+};
 
-export default App
+export default App;
