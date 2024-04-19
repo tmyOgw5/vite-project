@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import ProjectContent from '../components/ProjectContent'
 import { Flex, Box } from '@chakra-ui/react';
 
-const HomePage = () => {
+const ProjectPage = () => {
   const appStyle: CSSProperties = {
     backgroundColor: '#F8F8F4', // 好きな背景色を指定
     minHeight: '150vh', // 画面全体の高さを保証
@@ -32,4 +32,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default ProjectPage;
