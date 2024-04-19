@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
 import { Flex, Box } from '@chakra-ui/react';
+import BlogContent from '../components/BlogContent';
 
 const BlogPage = () => {
   const appStyle: CSSProperties = {
@@ -14,7 +15,6 @@ const BlogPage = () => {
   const boxStyle: CSSProperties = {
     backgroundColor: 'transparent',
     width: '90vw',
-    height: '100vh',
     top: '80px',
     borderRadius: '20px',
     display: 'flex',
@@ -24,7 +24,7 @@ const BlogPage = () => {
     <React.Fragment>
       <Flex style={appStyle}>
         <Box position="absolute" style={boxStyle}>
-          <h1>Blog</h1>
+          <BlogContent />
         </Box>
       </Flex>
     </React.Fragment>
