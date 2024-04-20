@@ -5,7 +5,7 @@ import { Flex, Box } from '@chakra-ui/react';
 const HomePage = () => {
   const appStyle: CSSProperties = {
     backgroundColor: '#F8F8F4', // 好きな背景色を指定
-    minHeight: '150vh', // 画面全体の高さを保証
+    overflowY: 'auto',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
