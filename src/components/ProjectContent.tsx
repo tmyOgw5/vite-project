@@ -1,65 +1,103 @@
-import React, { CSSProperties } from 'react';
-import { 
-  Flex, 
-  Box, 
-  Card,CardHeader, 
-  CardBody, 
-  CardFooter,
-  Heading, 
-  Text,
-  Button, 
+import React, { useState } from 'react';
+import {
   SimpleGrid,
-  Image 
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Heading,
+  Text,
+  Image,
+  Link,
 } from '@chakra-ui/react';
 
+interface Project {
+  id: number;
+  title: string;
+  imageUrl: string;
+  modalContent: string;
+  link?: string;
+}
 
+const ProjectContent: React.FC<{ projects: Project[] }> = ({ projects }) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-const project = [
-    {
-        title: 'Project 1',
-        description: 'This is a project 1.',
-    },
-    {
-    title: 'Project 2',
-    description: 'This is a project 2.',
-    },
-    {
-    title: 'Project 3',
-    description: 'This is a project 3.',
-    },
-    {
-    title: 'Project 4',
-    description: 'This is a project 4.',
-    }
-];
+  // 選択したプロジェクトをセットし、モーダルを開く
+  const handleViewDetails = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
 
-const ProjectContent = () => {
+  // モーダルを閉じる
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    setIsModalOpen(false);
+  };
 
   return (
-    <React.Fragment>
-        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))'>
-          {project.map((project) => (
-            <Card>
-              <CardHeader>
-                <Heading size='md'> {project.title}</Heading>
-              </CardHeader>
-              <CardBody>
-                <Image
-                  src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                  alt='Green double couch with wooden legs'
-                  borderRadius='lg'
-                />
-                <Text>View a summary of all your customers over the last month.</Text>
-              </CardBody>
-              <CardFooter>
-                <Button>View here</Button>
-              </CardFooter>
-            </Card>
-          ))}
-          </SimpleGrid>
-    </React.Fragment>
-    );
+    <>
+      <SimpleGrid
+        spacing={4}
+        templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+        width={{ base: '100%', md: '100%', lg: '80%' }}
+      >
+        {projects.map((project) => (
+          <Card key={project.id}>
+            <CardHeader>
+              <Heading size="md">{project.title}</Heading>
+            </CardHeader>
+            <CardBody>
+              <Image
+                src={project.imageUrl}
+                alt={project.title}
+                borderRadius="lg"
+                justifyContent="center"
+                objectFit="cover"
+              />
+            </CardBody>
 
+            <CardFooter>
+              <Button onClick={() => handleViewDetails(project)}>View here</Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </SimpleGrid>
+
+      {/* ポップアップ（モーダル） */}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{selectedProject?.title}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            {selectedProject && (
+              <>
+                <Image src={selectedProject.imageUrl} alt={selectedProject.title} borderRadius="lg" />
+                <Text marginTop={'1rem'}>{selectedProject.modalContent}</Text>
+                {selectedProject.link && (
+                  <Link href={selectedProject.link} isExternal color={'blue.400'}>
+                    {selectedProject.link}
+                  </Link>
+                )}
+              </>
+            )}
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={handleCloseModal}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  );
 };
 
 export default ProjectContent;

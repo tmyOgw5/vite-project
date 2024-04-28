@@ -3,7 +3,8 @@ import { Box, Flex, Image, Text, useMediaQuery, Divider } from '@chakra-ui/react
 import SocialIcons from './SocialIcons';
 import Timeline from './Timeline';
 import Skills from './Skills';
-import icon from '../assets/images/icon.jpg';
+import icon from '../assets/images/IMG_2537.jpg';
+import WorkExperience from './WorkExprience';
 
 const HeaderContent = () => {
   // メディアクエリの定義
@@ -23,9 +24,9 @@ const HeaderContent = () => {
           </Box>
           <Box marginX="50px" display="flex" flexDirection="column" justifyContent="center">
             <Text fontSize="2xl" fontWeight="bold">
-              大阪公立大学 工学部情報工学科 4年
+              大阪公立大学大学院 情報学研究科 修士1年
             </Text>
-            <Text fontSize="xl">趣味: バレーボール，フットサル </Text>
+            <Text fontSize="xl">趣味: バレーボール、フットサル、旅行 </Text>
           </Box>
         </Flex>
       ) : (
@@ -35,18 +36,19 @@ const HeaderContent = () => {
             小川 智也
           </Text>
           <SocialIcons />
-          <Box marginX="50px" marginY="20px">
+          <Box marginX="20px" marginY="20px">
             <Text fontSize="2xl" fontWeight="bold">
-              大阪公立大学
+              大阪公立大学大学院
             </Text>
             <Text fontSize="2xl" fontWeight="bold">
-              工学部情報工学科 4年
+              情報学研究科 修士1年
             </Text>
-            <Text fontSize="xl">趣味: バレーボール，フットサル </Text>
+            <Text fontSize="xl">趣味: バレーボール、フットサル、旅行 </Text>
           </Box>
         </Flex>
       )}
       <Skills />
+      <WorkExperience />
       <Box position="relative" padding="5">
         <Divider borderColor="#222222" />
       </Box>
