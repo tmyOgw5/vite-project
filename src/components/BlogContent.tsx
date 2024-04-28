@@ -7,25 +7,28 @@ const BlogContent = () => {
   return (
     <React.Fragment>
       <VStack spacing={4} align="stretch">
-        {blogs.map((blogPost, index) => (
-          <Link key={index} to={`/blog/${blogPost.id}`}>
-            <Card
-              direction={{ base: 'column', sm: 'row' }}
-              overflow="hidden"
-              variant="outline"
-              boxSize={{ base: '100%', sm: '100%' }}
-              _hover={{ shadow: 'md' }}
-              minWidth={{ base: '100vw', sm: '90vw', md: '70vw' }}
-            >
-              <Stack>
-                <CardBody>
-                  <Heading size="md">{blogPost.title}</Heading>
-                  <Text py="2">{blogPost.date}</Text>
-                </CardBody>
-              </Stack>
-            </Card>
-          </Link>
-        ))}
+        {blogs
+          .slice()
+          .reverse()
+          .map((blogPost, index) => (
+            <Link key={index} to={`/blog/${blogPost.id}`}>
+              <Card
+                direction={{ base: 'column', sm: 'row' }}
+                overflow="hidden"
+                variant="outline"
+                boxSize={{ base: '100%', sm: '100%' }}
+                _hover={{ shadow: 'md' }}
+                minWidth={{ base: '100vw', sm: '90vw', md: '70vw' }}
+              >
+                <Stack>
+                  <CardBody>
+                    <Heading size="md">{blogPost.title}</Heading>
+                    <Text py="2">{blogPost.date}</Text>
+                  </CardBody>
+                </Stack>
+              </Card>
+            </Link>
+          ))}
       </VStack>
     </React.Fragment>
   );
