@@ -1,8 +1,7 @@
 // BlogPostPage.tsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { VStack, Stack, Heading, Text, Card, CardBody, Mark, Box, Flex } from '@chakra-ui/react';
-import MarkdownViewer from '../components/MarkdownViewer';
+import { Box, Flex } from '@chakra-ui/react';
 import BlogPostContent from '../components/BlogPostContent';
 
 const BlogPostPage: React.FC = () => {

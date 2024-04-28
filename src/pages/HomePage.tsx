@@ -15,7 +15,7 @@ const HomePage = () => {
   const boxStyle: CSSProperties = {
     backgroundColor: 'transparent',
     width: '90vw',
-    height: '100vh',
+    height: '100%',
     top: '80px',
     borderRadius: '20px',
     display: 'flex',

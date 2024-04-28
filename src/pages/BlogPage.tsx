@@ -17,6 +17,8 @@ const BlogPage = () => {
     top: '80px',
     borderRadius: '20px',
     display: 'flex',
+    justifyContent: 'center',
+    width: '90vw',
   };
 
   return (
