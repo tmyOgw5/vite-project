@@ -1,11 +1,10 @@
-import React from 'react';
-import { chakra, Container, Flex, Box, Link, Text } from '@chakra-ui/react';
+import { Container, Flex, Box, Text } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { Link as ChakraLink, LinkProps } from '@chakra-ui/react';
+import { Link as ChakraLink } from '@chakra-ui/react';
 
 const Header = () => {
   return (
-    <chakra.header
+    <Box
       py={4}
       bgColor="transparent"
       position="fixed" // ヘッダーを上部に固定
@@ -18,24 +17,26 @@ const Header = () => {
       <Container maxW="100vw">
         <Flex justify="space-between" align="center">
           {/* ロゴ */}
-          <Text fontSize="2xl" color="#222222">
-            Tomoya Ogawa
-          </Text>
+          <ChakraLink as={ReactRouterLink} to="/" color="#222222" mr={4} fontWeight={'normal'}>
+            <Text fontSize="2xl" color="#222222">
+              Tomoya Ogawa
+            </Text>
+          </ChakraLink>
           {/* ナビゲーションメニュー */}
-          <Box>
-            <ChakraLink as={ReactRouterLink} to="/" color="#222222" mr={4}>
-              Home
+          <Flex>
+            <ChakraLink as={ReactRouterLink} to="/" color="#222222" mr={4} fontWeight={'normal'}>
+              <Text>Home</Text>
             </ChakraLink>
-            <ChakraLink as={ReactRouterLink} to="/project" color="#222222" mr={4}>
-              Project
+            <ChakraLink as={ReactRouterLink} to="/project" color="#222222" mr={4} fontWeight={'normal'}>
+              <Text>Project</Text>
             </ChakraLink>
-            <ChakraLink as={ReactRouterLink} to="/blog" color="#222222">
-              Blog
+            <ChakraLink as={ReactRouterLink} to="/blog" color="#222222" mr={4} fontWeight={'normal'}>
+              <Text>Blog</Text>
             </ChakraLink>
-          </Box>
+          </Flex>
         </Flex>
       </Container>
-    </chakra.header>
+    </Box>
   );
 };
 

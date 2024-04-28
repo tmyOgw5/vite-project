@@ -1,5 +1,5 @@
-import { Box, Card, CardBody, CardHeader, ChakraProvider } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { Card, CardBody, CardHeader, ChakraProvider } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Blog } from './BlogPostContent';
@@ -87,8 +87,9 @@ const MarkdownViewer = ({ blog }: MarkdownViewerProps) => {
     // 外部のMarkdownファイルからコンテンツを取得する非同期関数
     const fetchMarkdownContent = async () => {
       try {
+        const formattedFileName = `${blog.date}-${blog.id}`;
         // マークダウンファイルのパス
-        const markdownFilePath = `../../articles/${blog.id}.md`;
+        const markdownFilePath = `../../articles/${formattedFileName}.md`;
 
         // ローカルのMarkdownファイルを取得
         const response = await fetch(markdownFilePath);

@@ -1,17 +1,10 @@
-import React from 'react';
-import { Box, Text, HStack, Flex } from '@chakra-ui/react';
-import { FaPython, FaReact } from 'react-icons/fa'; // 必要なアイコンをインポート
-import { List, ListItem, ListIcon, OrderedList, UnorderedList } from '@chakra-ui/react';
-const iconStyle = {
-  fontSize: '40px', // アイコンの大きさを変更
-  color: '#ffffff', // アイコンの色を変更
-  display: 'flex',
-};
+import { Box, Text } from '@chakra-ui/react';
+import { ListItem, UnorderedList } from '@chakra-ui/react';
 
 const Skills = () => {
   return (
     <Box margin="20px">
-      <Text bgGradient="linear(to-tl, #7928CA, #FF0080)" bgClip="text" fontSize="3xl" fontWeight="bold" mb="10px">
+      <Text color={'#562B7C'} fontSize="3xl" fontWeight="bold" mb="10px">
         Skills
       </Text>
       <UnorderedList fontSize="xl">

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Flex, Link } from '@chakra-ui/react';
-import { FaInstagram, FaGithub } from 'react-icons/fa';
+import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const iconStyle = {
   fontSize: '40px', // アイコンの大きさを変更
@@ -13,8 +12,11 @@ const SocialIcons = () => {
       <Link href="https://www.instagram.com/" target="_blank" pr={2}>
         <FaInstagram style={iconStyle} />
       </Link>
-      <Link href="https://github.com/tmyOgw5" target="_blank">
+      <Link href="https://github.com/tmyOgw5" target="_blank" pr={2}>
         <FaGithub style={iconStyle} />
+      </Link>
+      <Link href="https://www.linkedin.com/in/tomoya-ogawa-63a7652b8/" target="_blank">
+        <FaLinkedin style={iconStyle} />
       </Link>
     </Flex>
   );
