@@ -11,10 +11,10 @@ interface TimelineItemProps {
 const TimelineItem: React.FC<TimelineItemProps> = ({ title, date, icon, children }) => {
   const [isWideScreen] = useMediaQuery('(min-width: 900px)');
   return (
-    <Box width="90%">
+    <Box width="100%">
       <Flex align="center" w="100%">
         <Box>
-          <Center height="60px">
+          <Center height="90px">
             <Divider orientation="vertical" borderColor="#222222" />
           </Center>
           <Center
@@ -26,7 +26,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, date, icon, children
           >
             {icon}
           </Center>
-          <Center height="70px">
+          <Center height="90px">
             <Divider orientation="vertical" borderColor="#222222" />
           </Center>
         </Box>
