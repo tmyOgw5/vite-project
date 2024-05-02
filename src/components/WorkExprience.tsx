@@ -15,6 +15,10 @@ const works = [
     date: '2024.02-2024.03',
   },
   {
+    work: 'インターン、株式会社いい生活',
+    date: '2023.09-2023.09',
+  },
+  {
     work: 'サーバー管理者、知能メディア処理研究室',
     date: '2023.01-現在',
   },
@@ -22,7 +26,13 @@ const works = [
 const WorkExperience = () => {
   return (
     <Box margin="20px">
-      <Text fontSize="3xl" fontWeight="bold" mb="10px" color={'#562B7C'}>
+      <Text
+        fontSize="3xl"
+        fontWeight="bold"
+        mb="10px"
+        bgGradient={'linear(to-t, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%)'}
+        bgClip="text"
+      >
         Work Experience
       </Text>
       <UnorderedList fontSize="xl">

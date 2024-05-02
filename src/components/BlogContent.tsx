@@ -17,7 +17,8 @@ const BlogContent = () => {
                 overflow="hidden"
                 variant="outline"
                 boxSize={{ base: '100%', sm: '100%' }}
-                _hover={{ shadow: 'md' }}
+                boxShadow={'md'}
+                _hover={{ shadow: 'lg' }}
                 minWidth={{ base: '100vw', sm: '90vw', md: '70vw' }}
               >
                 <Stack>

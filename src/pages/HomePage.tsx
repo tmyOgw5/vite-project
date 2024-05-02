@@ -19,6 +19,7 @@ const HomePage = () => {
     top: '80px',
     borderRadius: '20px',
     display: 'flex',
+    margin: 'auto',
   };
 
   return (

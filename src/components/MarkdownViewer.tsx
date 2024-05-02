@@ -105,7 +105,15 @@ const MarkdownViewer = ({ blog }: MarkdownViewerProps) => {
   console.log(content);
 
   return (
-    <Card backgroundColor="white" padding="5px" borderRadius="5px" width="100%" overflowY="auto">
+    <Card
+      backgroundColor="white"
+      padding="5px"
+      borderRadius="5px"
+      width="100%"
+      overflowY="auto"
+      boxShadow={'md'}
+      marginBottom={'50px'}
+    >
       <CardHeader fontSize="2xl">{blog.title}</CardHeader>
       <CardHeader fontSize="sm">{blog.date}</CardHeader>
       <CardBody paddingX="10px">

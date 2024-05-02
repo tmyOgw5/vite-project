@@ -4,7 +4,13 @@ import { ListItem, UnorderedList } from '@chakra-ui/react';
 const Skills = () => {
   return (
     <Box margin="20px">
-      <Text color={'#562B7C'} fontSize="3xl" fontWeight="bold" mb="10px">
+      <Text
+        bgGradient={'linear(to-t, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%)'}
+        bgClip="text"
+        fontSize="3xl"
+        fontWeight="bold"
+        mb="10px"
+      >
         Skills
       </Text>
       <UnorderedList fontSize="xl">

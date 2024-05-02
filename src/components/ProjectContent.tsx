@@ -17,6 +17,8 @@ import {
   Text,
   Image,
   Link,
+  Box,
+  Flex,
 } from '@chakra-ui/react';
 
 interface Project {
@@ -44,14 +46,14 @@ const ProjectContent: React.FC<{ projects: Project[] }> = ({ projects }) => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <SimpleGrid
         spacing={4}
         templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
         width={{ base: '100%', md: '100%', lg: '80%' }}
       >
         {projects.map((project) => (
-          <Card key={project.id}>
+          <Card key={project.id} boxShadow={'md'} _hover={{ shadow: 'lg' }}>
             <CardHeader>
               <Heading size="md">{project.title}</Heading>
             </CardHeader>
@@ -96,7 +98,7 @@ const ProjectContent: React.FC<{ projects: Project[] }> = ({ projects }) => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </React.Fragment>
   );
 };
 

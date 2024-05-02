@@ -48,7 +48,13 @@ const Timeline: React.FC = () => {
   return (
     <>
       <Box marginX="20px" marginBottom="40px">
-        <Text color={'#562B7C'} fontSize="3xl" fontWeight="bold" mb="10px">
+        <Text
+          bgGradient={'linear(to-t, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%)'}
+          bgClip="text"
+          fontSize="3xl"
+          fontWeight="bold"
+          mb="10px"
+        >
           TimeLine
         </Text>
       </Box>
