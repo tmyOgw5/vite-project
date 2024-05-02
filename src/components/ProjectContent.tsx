@@ -17,8 +17,6 @@ import {
   Text,
   Image,
   Link,
-  Box,
-  Flex,
 } from '@chakra-ui/react';
 
 interface Project {
