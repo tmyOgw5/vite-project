@@ -5,8 +5,8 @@ import { projects } from '../data/projects';
 
 const ProjectPage = () => {
   const appStyle: CSSProperties = {
-    backgroundColor: '#F8F8F4', // 好きな背景色を指定
-    overflowY: 'auto', // overflow-yの代わりにoverflowYを使用
+    backgroundColor: '#F8F8F4',
+    overflowY: 'auto',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

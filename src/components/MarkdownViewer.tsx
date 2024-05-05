@@ -106,16 +106,19 @@ const MarkdownViewer = ({ blog }: MarkdownViewerProps) => {
 
   return (
     <Card
-      backgroundColor="white"
+      backgroundColor="#f5f8f4"
       padding="5px"
       borderRadius="5px"
       width="100%"
-      overflowY="auto"
-      boxShadow={'md'}
       marginBottom={'50px'}
+      boxShadow={'none'}
     >
-      <CardHeader fontSize="2xl">{blog.title}</CardHeader>
-      <CardHeader fontSize="sm">{blog.date}</CardHeader>
+      <CardHeader fontSize="2xl" fontWeight={'bold'} paddingX={'10px'} paddingBottom={'none'} paddingInlineEnd={'none'}>
+        {blog.title}
+      </CardHeader>
+      <CardHeader fontSize="sm" paddingX={'10px'} paddingY={'none'} paddingInline={'none'}>
+        {blog.date}
+      </CardHeader>
       <CardBody paddingX="10px">
         <ChakraProvider theme={theme}>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>

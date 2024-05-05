@@ -15,7 +15,6 @@ const BlogPostPage: React.FC = () => {
 
   const boxStyle = {
     backgroundColor: 'transparent',
-    height: '100vh',
     top: '80px',
     borderRadius: '20px',
     display: 'flex',
@@ -25,7 +24,12 @@ const BlogPostPage: React.FC = () => {
   return (
     <React.Fragment>
       <Flex style={appStyle}>
-        <Box position="absolute" style={boxStyle} boxSize={{ base: '100%', sm: '100%', md: '70%' }}>
+        <Box
+          position="absolute"
+          style={boxStyle}
+          boxSize={{ base: '100%', sm: '100%', md: '70%' }}
+          height={{ base: '100vh', sm: '230vh', md: '200vh', lg: '160vh' }}
+        >
           {id && <BlogPostContent id={id} />}
         </Box>
       </Flex>
