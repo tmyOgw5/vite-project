@@ -9,7 +9,7 @@ const iconStyle = {
 const SocialIcons = () => {
   return (
     <Flex justifyContent="center" mt={2}>
-      <Link href="https://www.instagram.com/" target="_blank" pr={2}>
+      <Link href="https://www.instagram.com/tom0418stream?igsh=NjVzOXJvMXhtczEx&utm_source=qr" target="_blank" pr={2}>
         <FaInstagram style={iconStyle} />
       </Link>
       <Link href="https://github.com/tmyOgw5" target="_blank" pr={2}>

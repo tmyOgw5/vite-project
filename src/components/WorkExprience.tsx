@@ -54,7 +54,7 @@ const WorkExperience = () => {
       </Text>
       <UnorderedList fontSize="xl">
         {works.map((work) => (
-          <ListItem key={work.work} mb={5}>
+          <ListItem key={work.work}>
             <Accordion allowToggle>
               <AccordionItem>
                 <h2>
